@@ -105,28 +105,28 @@ MonoBehaviour:
     m_Value: 4
   cumulusMap:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 90932cc9bc609144388a23937ea71e6c, type: 3}
     dimension: 2
   cumulusMapMultiplier:
     m_OverrideState: 1
     m_Value: 1
   altoStratusMap:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 90932cc9bc609144388a23937ea71e6c, type: 3}
     dimension: 2
   altoStratusMapMultiplier:
     m_OverrideState: 1
     m_Value: 1
   cumulonimbusMap:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 90932cc9bc609144388a23937ea71e6c, type: 3}
     dimension: 2
   cumulonimbusMapMultiplier:
     m_OverrideState: 1
     m_Value: 1
   rainMap:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 90932cc9bc609144388a23937ea71e6c, type: 3}
     dimension: 2
   cloudMapResolution:
     m_OverrideState: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value:
       mode: 1
-      customValue: 100
+      customValue: 20351.5
       additiveValue: 0
       multiplyValue: 1
   orientation:

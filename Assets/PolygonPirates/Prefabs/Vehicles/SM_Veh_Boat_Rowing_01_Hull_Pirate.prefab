@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3330782}
   - component: {fileID: 2314398}
   - component: {fileID: 64297601824027120}
+  - component: {fileID: 7152300221434014883}
   m_Layer: 0
   m_Name: SM_Veh_Boat_Rowing_01_Hull_Pirate
   m_TagString: Untagged
@@ -107,6 +108,33 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43937022805040832, guid: 3c38b3602ba56544788ae0bdc383cc61, type: 2}
+--- !u!54 &7152300221434014883
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169740}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &313029421493894719
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f831116280fee46bcbe7810863f838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 7152300221434014883}
   water: {fileID: 0}
   submergeDepth: 1
   displacementAmount: 2
@@ -202,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f831116280fee46bcbe7810863f838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 7152300221434014883}
   water: {fileID: 0}
   submergeDepth: 1
   displacementAmount: 2
@@ -253,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f831116280fee46bcbe7810863f838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 7152300221434014883}
   water: {fileID: 0}
   submergeDepth: 1
   displacementAmount: 2
@@ -339,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f831116280fee46bcbe7810863f838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 7152300221434014883}
   water: {fileID: 0}
   submergeDepth: 1
   displacementAmount: 2
