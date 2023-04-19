@@ -10,10 +10,9 @@ public class ConinousMovementPhysics : MonoBehaviour
     public float jumpHeight = 1.5f;
 
     public bool moveWhenGrounded = false;
-    public bool jumpWithHand = true;
 
-    public float minJumpWithHandSpeed = 2f;
-    public float maxJumpWithHandSpeed = 7f;
+
+
 
     public InputActionProperty moveInputSource;
     public InputActionProperty turnInputSource;
@@ -37,29 +36,15 @@ public class ConinousMovementPhysics : MonoBehaviour
 
     private void Update() 
     {
-        inputMoveAxis = moveInputSource.action.ReadValue<Vector2>();
-        inputTurnAxis = turnInputSource.action.ReadValue<Vector2>().x;
+
 
         bool jumpInput = jumpInputSource.action.WasPerformedThisFrame();
 
-        if(jumpWithHand)
+    
+        if(jumpInput && IsGrounded())
         {
-            if(jumpInput && IsGrounded())
-            {
-                jumpVelocity = Mathf.Sqrt(2 *-Physics.gravity.y * jumpHeight);
-                rb.velocity = Vector3.up * jumpVelocity;
-            }
-        }
-        else
-        {
-            bool inputJumpPressed = jumpInputSource.action.IsPressed();
-
-            float handSpeed = ((leftHandRb.velocity - rb.velocity).magnitude + (rightHandRb.velocity - rb.velocity).magnitude) / 2f;
-
-            if(inputJumpPressed && IsGrounded() && handSpeed > minJumpWithHandSpeed)
-            {
-                rb.velocity = Vector3.up * Mathf.Clamp(handSpeed, minJumpWithHandSpeed, maxJumpWithHandSpeed);
-            }
+            jumpVelocity = Mathf.Sqrt(2 *-Physics.gravity.y * jumpHeight);
+            rb.velocity = Vector3.up * jumpVelocity;
         }
     }
 
