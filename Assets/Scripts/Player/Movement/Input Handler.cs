@@ -26,7 +26,7 @@ public class InputHandler : MonoBehaviour
             
             inputActions.XRILeftHandLocomotion.Move.performed += i => movementInput = i.ReadValue<Vector2>();
             inputActions.XRIRightHandLocomotion.Turn.performed += i => turnInput = i.ReadValue<Vector2>().x;
-            inputActions.XRIRightHandLocomotion.Turn.canceled -= i => turnInput = i.ReadValue<Vector2>().x;
+            inputActions.XRIRightHandLocomotion.Turn.canceled += i => turnInput = i.ReadValue<Vector2>().x;
 
             inputActions.XRIRightHandInteraction.SelectValue.performed += inputActions => rightGripValue = inputActions.ReadValue<float>(); //Controls Input Of Right Grip
             inputActions.XRIRightHandInteraction.ActivateValue.performed += inputActions => rightTriggerValue = inputActions.ReadValue<float>(); //Controls Input Of Right Trigger

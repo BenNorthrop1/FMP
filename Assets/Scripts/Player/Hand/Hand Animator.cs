@@ -22,7 +22,7 @@ public class HandAnimator : MonoBehaviour
         if(isRight)
         {
             HandAnim.SetFloat("Trigger", inputHandler.RightTriggerValue());
-            HandAnim.SetFloat("Grip", inputHandler.rightGripValue);
+            HandAnim.SetFloat("Grip", inputHandler.RightGripValue());
         }
         else
         {
