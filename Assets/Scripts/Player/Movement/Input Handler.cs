@@ -25,6 +25,7 @@ public class InputHandler : MonoBehaviour
             inputActions = new VRActions();
             
             inputActions.XRILeftHandLocomotion.Move.performed += i => movementInput = i.ReadValue<Vector2>();
+            inputActions.XRILeftHandLocomotion.Move.canceled += i => movementInput = i.ReadValue<Vector2>();
             inputActions.XRIRightHandLocomotion.Turn.performed += i => turnInput = i.ReadValue<Vector2>().x;
             inputActions.XRIRightHandLocomotion.Turn.canceled += i => turnInput = i.ReadValue<Vector2>().x;
 

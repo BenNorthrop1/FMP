@@ -520,7 +520,7 @@ public partial class @VRActions: IInputActionCollection2, IDisposable
                     ""id"": ""8e383b1a-270f-4c20-819b-89a59cffb498"",
                     ""path"": ""<XRController>{LeftHand}/Primary2DAxis"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone"",
+                    ""processors"": """",
                     ""groups"": ""Continuous Move"",
                     ""action"": ""Move"",
                     ""isComposite"": false,

@@ -28,7 +28,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     private InputHandler inputHandler;
 
-    private bool isGrounded;
 
     Camera pcamera;
 
@@ -44,7 +43,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(isGrounded)
+        if(IsGrounded())
         {
             Quaternion rot = Quaternion.Euler(0, directionSource.eulerAngles.y, 0);
             Vector3 dir = rot * new Vector3(inputHandler.InputMoveAxis().x, 0, inputHandler.InputMoveAxis().y);
@@ -77,36 +76,11 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
-    public void HandleGroundDetection()
+    public bool IsGrounded()
     {
-        RaycastHit hit;
-        Vector3 start = xrOrigin.position;
-        start.y = start.y + raycastOffset;
-        Vector3 targetPosition;
+        Vector3 start = bodyCollider.transform.TransformPoint(bodyCollider.center);
         float rayLength = bodyCollider.height/2 - bodyCollider.radius + 0.05f;
-        targetPosition = xrOrigin.position;
 
-        if(Physics.SphereCast(start, .2f, -Vector3.up, out hit, rayLength, groundLayer))
-        {
-            Vector3 rayCastHitPoint = hit.point;
-            targetPosition.y = rayCastHitPoint.y;
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-
-        if(isGrounded)
-        {
-            if(inputHandler.MoveAmount() > 0)
-            {
-                xrOrigin.position = Vector3.Lerp(xrOrigin.position, targetPosition, Time.deltaTime / 0.1f);
-            }
-            else
-            {
-                xrOrigin.position = targetPosition;
-            }
-        }
+        return Physics.SphereCast(start, bodyCollider.radius, Vector3.down, out RaycastHit hitInfo, rayLength, groundLayer);
     }
 }
